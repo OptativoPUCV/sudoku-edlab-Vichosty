@@ -61,6 +61,7 @@ bool comp_linea_columna(int i,int j,Node*n){
     return false;
   }
   else{
+    printf("primeraVerdad/n");
     return true;
   }
 }
@@ -84,6 +85,7 @@ bool  comp_cuadrante(int i,int j, Node* n){
             }
         }
     }
+    printf("verdad/n");
     return true;
 }
 
