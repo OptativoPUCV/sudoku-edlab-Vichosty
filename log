@@ -1,0 +1,39 @@
+Wed Oct 14 19:31:23 UTC 2020: 
+ sudoku.c | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:60:25: error: assignment to expression with array type
+             aux -> sudo = n -> sudo;
+                         ^
+sudoku.c:62:13: error: implicit declaration of function ‘push_back’; did you mean ‘pushBack’? [-Werror=implicit-function-declaration]
+             push_back(lista, aux);
+             ^~~~~~~~~
+             pushBack
+sudoku.c:62:23: error: ‘lista’ undeclared (first use in this function); did you mean ‘list’?
+             push_back(lista, aux);
+                       ^~~~~
+                       list
+sudoku.c:62:23: note: each undeclared identifier is reported only once for each function it appears in
+cc1: all warnings being treated as errors
+Compilation failed
+Wed Oct 14 19:31:40 UTC 2020: 
+ sudoku.c | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:60:25: error: assignment to expression with array type
+             aux -> sudo = n -> sudo;
+                         ^
+sudoku.c:62:22: error: ‘lista’ undeclared (first use in this function); did you mean ‘list’?
+             pushBack(lista, aux);
+                      ^~~~~
+                      list
+sudoku.c:62:22: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+Wed Oct 14 19:33:09 UTC 2020: 
+ sudoku.c | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+ tests:  0|5
+total_score: 0/70
+d449582
