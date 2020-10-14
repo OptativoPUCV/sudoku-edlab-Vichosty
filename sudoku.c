@@ -42,7 +42,7 @@ void print_node(Node* n){
     }
     printf("\n");
 }
-int comp_linea_columna(int i,int j,Node*n){
+bool comp_linea_columna(int i,int j,Node*n){
     
   int k;
   int f=0;
@@ -58,14 +58,14 @@ int comp_linea_columna(int i,int j,Node*n){
   }
 
   if(f<=2){
-    return 0;
+    return false;
   }
   else{
-    return 1;
+    return true;
   }
 }
 
-int  comp_cuadrante(int i,int j, Node* n){
+bool  comp_cuadrante(int i,int j, Node* n){
     
     //int cua[cua_i][cua_j];
 //cua[0][1] cuadrante 1 linea 2
@@ -80,11 +80,11 @@ int  comp_cuadrante(int i,int j, Node* n){
                 comp++;
             }
             if(comp>=2){
-                return 0;
+                return false;
             }
         }
     }
-    return 1;
+    return true;
 }
 
 
@@ -94,7 +94,7 @@ int is_valid(Node* n){
   for(i=0;i<9;i++){
     for(j=0;j<9;j++){
 
-      if(comp_linea_columna(i,j,n) && comp_cuadrante(i,j,n)){
+      if(true == comp_linea_columna(i,j,n) && true == comp_cuadrante(i,j,n)){
         
         return 1;
       }else{
