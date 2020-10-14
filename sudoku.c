@@ -58,18 +58,18 @@ bool comp_linea_columna(int i,int j,Node*n){
   }
 
   if(f<=2){
-    return false;
+    return true;
   }
   else{
-    printf("primeraVerdad/n");
-    return true;
+    printf("primeraVerdad\n");
+    return false;
   }
 }
 
 bool  comp_cuadrante(int i,int j, Node* n){
     
     //int cua[cua_i][cua_j];
-//cua[0][1] cuadrante 1 linea 2
+    //cua[0][1] cuadrante 1 linea 2
     int cua_i=i/3;
     int cua_j=j/3;
     int k;
@@ -98,9 +98,9 @@ int is_valid(Node* n){
 
       if(true == comp_linea_columna(i,j,n) && true == comp_cuadrante(i,j,n)){
         
-        return 0;
-      }else{
         return 1;
+      }else{
+        return 0;
       }
     }
   }
