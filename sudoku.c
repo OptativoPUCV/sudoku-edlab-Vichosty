@@ -49,23 +49,28 @@ int is_valid(Node* n){
 
 
 List* get_adj_nodes(Node* n){
-  List* list=createList();
+  List* lista=createList();
   int i,j;
     int num;
     for(i=0;i<9;i++){
       for(j=0;j<9;j++){
+
         if(n->sudo[i][j]==0){
           for(num=1; num <=9; num++){
-            Node* aux = (Node*) malloc (sizeof(Node));
-            //aux -> sudo = n -> sudo;
-            aux -> sudo[i][j] = num;
-            pushBack(list, aux);
+            n->sudo[i][j]=num;
+            if(is_valid(n)){
+              Node* aux = copy(n);
+              pushBack(lista, aux);
+            }
           }
+          n->sudo[i][j] = 0;
+          return lista;
         }
       }
     }
-  return list;
-}
+        
+  return lista;
+  }
 
 
 int is_final(Node* n){
