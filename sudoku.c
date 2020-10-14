@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "list.h"
+#include <stdbool.h>
 
 
 typedef struct{
@@ -41,11 +42,68 @@ void print_node(Node* n){
     }
     printf("\n");
 }
+bool comp_linea_columna(int i,int j,Node*n){
+    
+  int k;
+  int f=0;
+  for(k=0;k<9;k++){
+
+    if(n->sudo[i][j]==n->sudo[k][j]){
+      f++;
+    }
+
+    if(n->sudo[i][j]==n->sudo[i][k]){
+      f++;
+    }
+  }
+
+  if(f<=2){
+    return false;
+  }
+  else{
+    return true;
+  }
+}
+
+bool  comp_cuadrante(int i,int j, Node* n){
+    
+    //int cua[cua_i][cua_j];
+//cua[0][1] cuadrante 1 linea 2
+    int cua_i=i/3;
+    int cua_j=j/3;
+    int k;
+    int f;
+    int comp=0;
+    for (f=0;f<3;f++){
+        for(k=0;k<3;k++){
+            if(n ->sudo[i][j]==n->sudo[(cua_i*3)-1+f][(cua_j*3)-1+k]){ //falla en el 0
+                comp++;
+            }
+            if(comp>=2){
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 
 int is_valid(Node* n){
+  int i;
+  int j;
+  for(i=0;i<9;i++){
+    for(j=0;j<9;j++){
 
-    return 1;
+      if(comp_linea_columna(i,j,n) && comp_cuadrante(i,j,n)){
+        return 1;
+      }else{
+        return 0;
+      }
+    }
+  }
+return 0;
 }
+
 
 
 List* get_adj_nodes(Node* n){
