@@ -81,12 +81,12 @@ bool  comp_cuadrante(int i,int j, Node* n){
                 comp++;
             }
             if(comp>=2){
-                return true;
+                return false;
             }
         }
     }
     printf("verdad\n");
-    return false;
+    return true;
 }
 
 
