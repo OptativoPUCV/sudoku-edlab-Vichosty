@@ -162,6 +162,7 @@ Node* DFS(Node* initial, int* cont){
       List* adj = get_adj_nodes(initial);
       Node* aux = first(adj);
       while(aux){
+        printf("a");
         push(S,aux);
         aux=next(adj);
       }
