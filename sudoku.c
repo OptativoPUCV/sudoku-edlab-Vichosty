@@ -119,6 +119,7 @@ List* get_adj_nodes(Node* n){
         if(n->sudo[i][j]==0){
           for(num=1; num <=9; num++){
             n->sudo[i][j]=num;
+            printf("%d/n",num);
             if(is_valid(n)){
               Node* aux = copy(n);
               pushBack(lista, aux);
@@ -144,7 +145,7 @@ int is_final(Node* n){
         return 0;
         }
       }
-    }
+  }
   return 1;
 }
 
