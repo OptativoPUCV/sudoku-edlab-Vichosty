@@ -129,9 +129,13 @@ List* get_adj_nodes(Node* n){
         }
       }
     }
-        
-  return lista;
-  }
+  if(is_valid(n)){
+    return lista;
+  }else{
+    return NULL;
+  }      
+  
+}
 
 
 int is_final(Node* n){
