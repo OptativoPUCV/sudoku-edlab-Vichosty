@@ -130,11 +130,9 @@ List* get_adj_nodes(Node* n){
       }
     }
   if(is_valid(n)){
-    return lista;
-  }else{
-    return NULL;
-  }      
-  
+    return lista;    
+  }
+  return NULL;
 }
 
 
