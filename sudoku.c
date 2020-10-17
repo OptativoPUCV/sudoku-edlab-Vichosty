@@ -157,7 +157,7 @@ Node* DFS(Node* initial, int* cont){
       if(is_final(initial)){
         return initial;
       }
-      popCurrent(S);
+      
     
       List* adj = get_adj_nodes(initial);
       Node* aux = first(adj);
