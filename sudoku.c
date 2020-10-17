@@ -153,7 +153,7 @@ Node* DFS(Node* initial, int* cont){
   if(S == NULL){
     return NULL;
   }else{
-    while(get_size(S)!=0){
+    while(get_size(S)==0){
     
       pop(S); 
       if(is_final(initial)){
