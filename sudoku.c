@@ -152,24 +152,25 @@ Node* DFS(Node* initial, int* cont){
   push(S,initial);
   if(S == NULL){
     return NULL;
+  }else{
+    while(get_size(S)!=0){
+    
+      pop(S); 
+      if(is_final(initial)){
+        return initial;
+      }
+    
+    
+      List* adj = get_adj_nodes(initial);
+      Node* aux = first(adj);
+      while(aux){
+        push(S,aux);
+        aux=next(adj);
+      }
+    
+      free(initial);
+    } 
   }
-  while(get_size(S)!=0){
-    
-    pop(S); 
-    if(is_final(initial)){
-      return initial;
-    }
-    
-    
-    List* adj = get_adj_nodes(initial);
-    Node* aux = first(adj);
-    while(aux){
-      push(S,aux);
-      aux=next(adj);
-    }
-    
-    free(initial);
-  } 
   return NULL;
 
 }
