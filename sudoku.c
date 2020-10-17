@@ -151,10 +151,9 @@ Node* DFS(Node* initial, int* cont){
   Stack* S = createStack();
   push(S,initial);
   if(S == NULL){
-    printf("ta mal\n");
     return NULL;
   }else{
-    while(get_size(S)<0){
+    while(get_size(S)!= 0){
     
       pop(S); 
       if(is_final(initial)){
@@ -172,7 +171,7 @@ Node* DFS(Node* initial, int* cont){
       free(initial);
     } 
   }
-  printf("ta mal\n");
+ 
   return NULL;
 
 }
