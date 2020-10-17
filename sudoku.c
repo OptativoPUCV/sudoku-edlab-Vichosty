@@ -154,13 +154,10 @@ Node* DFS(Node* initial, int* cont){
     return NULL;
   }else{
     while(get_size(S)!= 0){
-      printf("ta bien\n");
-      
-      printf("ta bien\n"); 
       if(is_final(initial)){
         return initial;
       }
-    
+      pop(S);
     
       List* adj = get_adj_nodes(initial);
       Node* aux = first(adj);
