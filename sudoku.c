@@ -150,10 +150,12 @@ Node* DFS(Node* initial, int* cont){
 
   Stack* S = createStack();
   push(S,initial);
-
+  if(S == NULL){
+    return NULL;
+  }
   while(get_size(S)!=0){
     
-    
+    pop(S); 
     if(is_final(initial)){
       return initial;
     }
