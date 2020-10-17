@@ -96,7 +96,7 @@ int is_valid(Node* n){
   for(i=0;i<9;i++){
     for(j=0;j<9;j++){
 
-      if(true == comp_linea_columna(i,j,n) && true == comp_cuadrante(i,j,n)){
+      if(true == comp_linea_columna(i,j,n) || true == comp_cuadrante(i,j,n)){
         
         return 1;
       }else{
@@ -112,26 +112,23 @@ return 1;
 List* get_adj_nodes(Node* n){
   List* lista=createList();
   int i,j;
-    int num;
-    for(i=0;i<9;i++){
-      for(j=0;j<9;j++){
+  int num;
+  for(i=0;i<9;i++){
+    for(j=0;j<9;j++){
 
-        if(n->sudo[i][j]==0){
-          for(num=1; num <=9; num++){
-            n->sudo[i][j]=num;
-            if(is_valid(n)){
-              Node* aux = copy(n);
-              pushBack(lista, aux);
-            }
+      if(n->sudo[i][j]==0){
+        for(num=1; num <=9; num++){
+          n->sudo[i][j]=num;
+          if(is_valid(n)){
+            Node* aux = copy(n);
+            pushBack(lista, aux);
           }
-          n->sudo[i][j] = 0;
-          return lista;
+        }
+        n->sudo[i][j] = 0;
+        return lista;
         }
       }
     }
-  if(is_valid(n)){
-    return lista;    
-  }
   return lista;
 }
 
