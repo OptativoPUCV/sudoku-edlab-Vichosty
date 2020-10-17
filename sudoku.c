@@ -77,7 +77,7 @@ bool  comp_cuadrante(int i,int j, Node* n){
     int comp=0;
     for (f=0;f<3;f++){
         for(k=0;k<3;k++){
-            if(n ->sudo[i][j]==n->sudo[(cua_i*3)-1+f][(cua_j*3)-1+k]&& n -> sudo[i][j] != 0){ //falla en el 0
+            if(n ->sudo[i][j]==n->sudo[(cua_i*3)-1+f][(cua_j*3)-1+k]){ //falla en el 0
                 comp++;
             }
             if(comp>=2){
