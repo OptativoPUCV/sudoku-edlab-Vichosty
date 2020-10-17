@@ -154,8 +154,9 @@ Node* DFS(Node* initial, int* cont){
     return NULL;
   }else{
     while(get_size(S)!= 0){
-    
-      pop(S); 
+      printf("ta bien\n");
+      pop(S);
+      printf("ta bien\n"); 
       if(is_final(initial)){
         return initial;
       }
