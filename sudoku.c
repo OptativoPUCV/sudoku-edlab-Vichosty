@@ -172,6 +172,7 @@ Node* DFS(Node* initial, int* cont){
       free(initial);
     } 
   }
+  printf("ta mal\n");
   return NULL;
 
 }
