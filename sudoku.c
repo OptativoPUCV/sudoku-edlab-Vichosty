@@ -96,7 +96,7 @@ int is_valid(Node* n){
 
       if(comp_linea_columna(i,j,n)){
         
-        return 0;
+        return 1;
       }
     }  
   }
