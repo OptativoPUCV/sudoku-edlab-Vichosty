@@ -42,29 +42,6 @@ void print_node(Node* n){
     }
     printf("\n");
 }
-bool comp_linea_columna(int i,int j,Node*n){
-    
-  int k;
-  int f=0;
-  for(k=0;k<9;k++){
-
-    if(n->sudo[i][j]==n->sudo[k][j]){
-      f++;
-    }
-
-    if(n->sudo[i][j]==n->sudo[i][k]){
-      f++;
-    }
-  }
-
-  if(f<=2){
-    return true;
-  }
-  else{
- 
-    return false;
-  }
-}
 
 bool  comp_cuadrante(Node* n){
   int con;
@@ -93,11 +70,11 @@ int is_valid(Node* n){
   int j;
   for(i=0;i<9;i++){
     for(j=0;j<9;j++){
-
-      if(comp_linea_columna(i,j,n)){
+      
+      
         
-        return 1;
-      }
+    
+      
     }  
   }
   if(comp_cuadrante(n)==false){
