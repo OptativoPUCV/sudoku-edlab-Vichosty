@@ -61,12 +61,13 @@ bool  comp_cuadrante(Node* n){
 }
 
 
-int is_valid(Node* n){/*
+int is_valid(Node* n){
   int i;
   int j;
   int x[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
   int y[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
   for(i=0;i<9;i++){
+    return 1;
     for(j=0;j<9;j++){
       if ((n->sudo[i][j] != 0)&&(x[n->sudo[i][j] - 1] != 0)) {
         return 0;
@@ -83,7 +84,7 @@ int is_valid(Node* n){/*
   if(comp_cuadrante(n)==false){
     return 0;
   }
-  */
+  
 return 1;
 }
 
