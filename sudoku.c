@@ -50,7 +50,7 @@ bool  comp_cuadrante(Node* n){
       
       int i = 3*((k/3) + (p/3));
       int j = 3*((k%3) + (p%3));
-      if ((n->sudo[i][j] != 0)&&(z[n->sudo[i][j] - 1] != 0)) {
+      if ((n->sudo[i][j] != 0)||(z[n->sudo[i][j] - 1] != 0)) {
         return false;
       }else{
         z[n->sudo[i][j] - 1] = 1;
@@ -67,14 +67,13 @@ int is_valid(Node* n){
   int x[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
   int y[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
   for(i=0;i<9;i++){
-    return 1;
     for(j=0;j<9;j++){
-      if ((n->sudo[i][j] != 0)&&(x[n->sudo[i][j] - 1] != 0)) {
+      if ((n->sudo[i][j] != 0)||(x[n->sudo[i][j] - 1] != 0)) {
         return 0;
       }else{
         x[n->sudo[i][j] - 1] = 1;
       }
-      if ((n->sudo[j][i] != 0)&&(y[n->sudo[j][i] - 1] != 0)) {
+      if ((n->sudo[j][i] != 0)||(y[n->sudo[j][i] - 1] != 0)) {
         return 0;
       }else{
         y[n->sudo[i][j] - 1] = 1;
