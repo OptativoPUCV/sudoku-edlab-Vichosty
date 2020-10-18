@@ -67,36 +67,32 @@ bool comp_linea_columna(int i,int j,Node*n){
 }
 
 bool  comp_cuadrante(int i,int j, Node* n){
-    
-    //int cua[cua_i][cua_j];
-    //cua[0][1] cuadrante 1 linea 2
-    int cua_i=i/3;
-    int cua_j=j/3;
-    int k;
-    int f;
-    int comp=0;
-    for (f=0;f<3;f++){
-        for(k=0;k<3;k++){
-            if(n ->sudo[i][j]==n->sudo[(cua_i*3)-1+f][(cua_j*3)-1+k]){ //falla en el 0
-                comp++;
-            }
-            if(comp>=2){
-                return false;
-            }
-        }
+  int con;
+  int k = 4;
+  for(int o=0;o<9;o++){
+    for(int p=0;p<9;p++){
+      
+      int i2 = 3*((k/3) + (j/3));
+      int j2 = 3*((k%3) + (j%3));
+      if(n->sudo[i2][j2]==i){
+        con++;
+      }
+      if(con >1){
+      return false;
+      }
+
+  
     }
-
-    return true;
+  }  
+  return 1;
 }
-
-
 int is_valid(Node* n){
   int i;
   int j;
   for(i=0;i<9;i++){
     for(j=0;j<9;j++){
 
-      if(true == comp_linea_columna(i,j,n) && true == comp_cuadrante(i,j,n)){
+      if(true == comp_linea_columna(i,j,n)){
         
         return 1;
       }else{
