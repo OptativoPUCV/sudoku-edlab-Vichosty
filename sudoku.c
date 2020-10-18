@@ -56,7 +56,6 @@ bool  comp_cuadrante(Node* n){
         z[n->sudo[i][j] - 1] = 1;
       }
     }
-    return true;
   }  
   return true;
 }
