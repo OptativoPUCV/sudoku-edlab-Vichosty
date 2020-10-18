@@ -44,21 +44,23 @@ void print_node(Node* n){
 }
 
 bool  comp_cuadrante(Node* n){
-  /*
+  
   int z[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
   for(int k=0;k<9;k++){
     for(int p=0;p<9;p++){
       
       int i = 3*((k/3) + (p/3));
       int j = 3*((k%3) + (p%3));
-      if ((z[n->sudo[i][j]]-1 != 0)) {
-        return false;
-      }else{
-        z[n->sudo[i][j] - 1] = 1;
-      }
+      if(n->sudo[i][j] != 0){
+        if ((z[n->sudo[i][j]]-1 != 0)) {
+          return false;
+        }else{
+          z[n->sudo[i][j] - 1] = 1;
+        }
+      }  
     }
   }
-  */  
+ 
   return true;
 }
 
