@@ -44,6 +44,7 @@ void print_node(Node* n){
 }
 
 bool  comp_cuadrante(Node* n){
+  /*
   int z[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
   for(int k=0;k<9;k++){
     for(int p=0;p<9;p++){
@@ -56,7 +57,8 @@ bool  comp_cuadrante(Node* n){
         z[n->sudo[i][j] - 1] = 1;
       }
     }
-  }  
+  }
+  */  
   return true;
 }
 
