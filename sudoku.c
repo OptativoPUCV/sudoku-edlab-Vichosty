@@ -70,9 +70,9 @@ int is_valid(Node* n){
   int y[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
   for(i=0;i<9;i++){
     for(j=0;j<9;j++){
+      printf("%d\n",x[n->sudo[i][j]]);
       if(n->sudo[i][j] != 0){
         if ((x[n->sudo[i][j]] != 0)) {
-          printf("%d\n",x[n->sudo[i][j]]);
           return 0;
         }else{
           x[n->sudo[i][j]] = 1;
